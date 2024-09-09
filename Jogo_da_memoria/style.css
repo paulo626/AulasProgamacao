@@ -1,0 +1,20 @@
+.container{
+    display: grid;
+    grid-template-columns: 228px 229px 228px;
+    gap: 21px;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.box{
+    background-color: blueviolet;
+}
+.box img{
+    background-size: 100%;
+    border: solid black;
+}
+
+.hidden img{
+    display: none;
+} 
+  
