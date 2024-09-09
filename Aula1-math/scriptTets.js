@@ -1,3 +1,6 @@
+//SynthWave ’84
+
+
 function exe2(){
     let numero1 = parseInt(prompt("digite o numeor da base"))
     let numero2 = parseInt(prompt("digite o numeor da potencia"))
