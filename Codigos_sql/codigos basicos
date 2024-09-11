@@ -1,0 +1,67 @@
+CREATE DATABASE aula; 
+'cria banco de dados'
+
+USE aula; 
+'usa banco de dados'
+
+DROP  aula; 
+'deleta banco de dados'
+
+
+    'Tipos de dados :'
+    Char(n) 'define o dado como um campo de digito podendo ter varios tamanhos'
+    Char(n) 'a mesma coisa do Char,so que esse é usado quando não se sabe o tamanho do dado'
+    Bigint  'Aceita valores entre -2^63 e 2^63-1, sendo que esse datatype ocupa 8 bytes.'
+    'Tipos de dados numericos'
+    Int  'Os valores aceitos aqui variam entre -2^31 a 2^31-1. Ocupa 4 bytes.'
+
+    Smallint  'Aceita valores entre -32768 até 32767 e ocupa 2 bytes.'
+
+    Tinyint  'Os valores aceitos aqui variam entre 0 e 255, ocupa apenas 1 byte.'
+
+    Bit  'É um tipo de dado inteiro (conhecido também como booleano), cujo valor pode corresponder a NULL, 0 ou 1. Podemos converter valores de 
+          string TRUE e FALSE em valores de bit, sendo que TRUE corresponde a 1 e FALSE a 0.'
+
+
+'Criando tabela'
+CREATE TABLE clientes (
+  id INT PRIMARY KEY,
+  nome VARCHAR(50),
+  email VARCHAR(50),
+  idade INT
+)
+
+SELECT nome, idade 'mostrar nome e idade '
+FROM clientes 'na tabela clientes'
+WHERE cidade = 'São Paulo'; 'na cidade de são paulo'
+
+SELECT ValorMedio,Nome 'mostrar valor medio'
+FROM Restaurantes 'da tabela Restaurantes'
+ORDER BY ValorMedio ASC; ' ordenado do menor para o maior' (DESC 'do maior para o menor')
+
+SELECT
+ ValorMedio,Nome
+FROM
+ Restaurantes
+WHERE
+ ValorMedio > 100;
+
+
+SELECT ValorMedio,Nome FROM Restaurantes WHERE ValorMedio >200
+ORDER BY ValorMedio desc;
+ 
+
+SELECT
+ HorarioFuncionamento,Nome
+FROM
+ Restaurantes
+WHERE
+ Nome ='Restaurante Italiano Paulista';
+
+
+SELECT COUNT(Bairro) FROM Enderecos WHERE Bairro ='Mooca';
+
+select* from Restaurantes where TipoCozinhaID = 2 order by ValorMedio desc
+
+select * from TiposCozinha
+
