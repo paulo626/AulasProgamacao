@@ -1,32 +1,38 @@
-function ver(){
-    let numero = Math.floor(Math.random()*10)
-    var tentativa = parseInt(document.getElementById("chute").value)
-    var resultado
-    let tentativa = 3
-    acerto = false
-    do{
-        if (tentativa == numero){
-            resultado = "acertou"
-            acerto = true
+//SynthWave ’84
+var butaoTenta = '<button class="botaoT" onclick="tentar()" id="botaotentar">tentar</button> <input type="number" id="teste_do_numero">'    
+
+function jerarnumero(){
+    const numero = Math.floor(Math.random()*10)
+    return numero;
+}
+
+function jogar(){
+    var div_botao = document.getElementById("divDobotao");
+    var botao = document.getElementById("botaoJogar");
+    botao.remove();
+    div_botao.innerHTML = butaoTenta;
+
+
+    var NumeroGerado = jerarnumero();
+    var vidas = 3
+}
+
+function JogoGanho(){
+
+}
+function tentar(){
+    let tentativa = parseInt(document.getElementById("teste_do_numero").value)
+
+    if(tentativa == NumeroGerado){
+        JogoGanho()
+    }
+    else{
+        if(vidas < 1){
+            JogoPerdido()
         }
         else{
-            if(tentativa = 0){
-                acerto = true
-                resultado = 'errou'
-            }
-            else{
-            tentativa--
-            alert(`errou,só possui mais ${tentativa} tentativas`)
-            }
+            PedeVida(vidas)
+            vidas--
         }
     }
-    while(acerto = false)
-    
-    
-    //saida
-    var saida = document.getElementById("resultado")
-    saida.innerText=resultado
-}
-function jogar(){
-
 }
