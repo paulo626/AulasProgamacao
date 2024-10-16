@@ -1,0 +1,50 @@
+CREATE DATABASE aula; 
+use aula;
+CREATE TABLE Livro;
+(
+    LivroID INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+    Titulo VARCHAR(100),
+    AutorID INT FOREIGN KEY REFERENCES Autores(AutorID)
+)
+
+CREATE TABLE Autores;
+(
+    LivroID INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+    Nome VARCHAR(50),
+)
+
+CREATE TABLE Membros;
+(
+    MembroID INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+    Nome VARCHAR(50),
+)
+
+CREATE TABLE Emprestimos;
+(
+    EmprestimosID INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+    LivroID INT,
+    MembroID INT,
+    DataEmprestimo DATE,
+    FOREIGN KEY REFERENCES Autores(AutorID)
+    FOREIGN KEY REFERENCES Membros(MembroID)
+)
+
+
+select*from Livro
+INNER JOIN Autores
+ON Livro.AutorID = Autores.AutorID
+
+select*from Livro
+INNER JOIN Autores
+ON Livro.AutorID = Autores.AutorID
+
+
+SELECT Livro.Titulo,Emprestimos.DataEmprestimo
+FROM Emprestimos
+RIGHT JOIN Livro
+ON Livro.LivroID = Emprestimos.LivroID;
+
+SELECT Membros.Nome,Emprestimos.DataEmprestimo 
+FROM Emprestimos
+RIGHT JOIN Membros
+ON Membro.MembroID = Emprestimos.MembroID
